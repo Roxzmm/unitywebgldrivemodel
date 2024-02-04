@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Unity WebGL Player | FancyWebGl</title>
+        <link rel="stylesheet" href="./TemplateData/style.css" />
+
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="./base/control_utils.css"
+            crossorigin="anonymous"
+        />
+
+        <script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.15.1/vconsole.min.js"></script>
+        <script>
+            // VConsole 默认会挂载到 `window.VConsole` 上
+            var vConsole = new window.VConsole()
+        </script>
+        <script src="./base/camera_utils.js" crossorigin="anonymous"></script>
+        <script src="./base/control_utils.js" crossorigin="anonymous"></script>
+        <script src="./base/drawing_utils.js" crossorigin="anonymous"></script>
+        <script src="./base/holistic.js" crossorigin="anonymous"></script>
+        
+<!--        <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>-->
+<!--        <script>-->
+<!--            // VConsole 默认会挂载到 `window.VConsole` 上-->
+<!--            var vConsole = new window.VConsole();-->
+<!--        </script>-->
+        
+        <link rel="stylesheet" href="./vendor/bootstrap.min.css" />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <div id="unity-container" class="unity-desktop">
+            <!-- 第一栏：声网 + Camera -->
+            <div class="header">
+                <video class="input_video"></video>
+
+                <form id="join-form">
+                    <div class="row join-info-group">
+                        <div class="col-sm">
+                            <p class="join-info-text">AppID</p>
+                            <input
+                                id="appid"
+                                type="text"
+                                placeholder="enter appid"
+                                required
+                            />
+                            <p class="tips">
+                                If you don`t know what is your appid, checkout
+                                <a
+                                    href="https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id"
+                                >
+                                    this
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-sm">
+                            <p class="join-info-text">Token(optional)</p>
+                            <input
+                                id="token"
+                                type="text"
+                                placeholder="enter token"
+                            />
+                            <p class="tips">
+                                If you don`t know what is your token, checkout
+                                <a
+                                    href="https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-namekeyadynamic-key"
+                                >
+                                    this
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-sm">
+                            <p class="join-info-text">Channel</p>
+                            <input
+                                id="channel"
+                                type="text"
+                                placeholder="enter channel name"
+                                required
+                            />
+                            <p class="tips">
+                                If you don`t know what is your channel, checkout
+                                <a
+                                    href="https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#channel"
+                                >
+                                    this
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button
+                            id="join"
+                            type="submit"
+                            class="btn btn-primary btn-sm"
+                        >
+                            Join
+                        </button>
+                        <button
+                            id="leave"
+                            type="button"
+                            class="btn btn-primary btn-sm"
+                            disabled
+                        >
+                            Leave
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <canvas class="output_canvas"></canvas>
+            <!-- 第二栏：player + unity -->
+            <div class="content">
+                <div id="remote-playerlist" class="box-player">
+                    
+                </div>
+                <div class="box-unity">
+                    <canvas id="unity-canvas" width="960" height="600"></canvas>
+                    <div id="unity-loading-bar">
+                        <div id="unity-logo"></div>
+                        <div id="unity-progress-bar-empty">
+                            <div id="unity-progress-bar-full"></div>
+                        </div>
+                    </div>
+                    <div id="unity-warning"></div>
+                    <div id="unity-footer">
+                        <div id="unity-webgl-logo"></div>
+                        <div id="unity-fullscreen-button"></div>
+                        <div id="unity-build-title">FancyWebGl</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="./agroa/AgoraRTC_N-4.19.3.js"></script>
+        <script src="./vendor/jquery-3.4.1.min.js"></script>
+        <script src="./vendor/bootstrap.bundle.min.js"></script>
+        <!-- <script src="./script.js"></script> -->
+        <script src="/main.js"></script>
+    </body>
+</html>
