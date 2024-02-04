@@ -154,7 +154,7 @@ const holistic = new Holistic({
     }
 });
 holistic.setOptions({
-    modelComplexity: 2,
+    modelComplexity: 0,
     smoothLandmarks: true,
     enableSegmentation: true,
     smoothSegmentation: true,
